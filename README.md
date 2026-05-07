@@ -19,13 +19,13 @@ $$Score = Score_{base} + \Delta Score_{emotion} + \Delta Score_{motivation}$$
 ### 參數詳細說明：
 
 * **基礎分 ($Score_{base}$)**：`50.0`（中立基準點）。
-* **情緒修正 ($\Delta Score_{emotion}$)**：
-    * 正向增益：$+ (30 \times Intensity \times Confidence_{emo})$
-    * 負向抑制：$- (35 \times Intensity \times Confidence_{emo})$
-* **動機修正 ($\Delta Score_{motivation}$)**：
-    * 傳承/社交補償 (Legacy/Social)：$+ (35 \times Confidence_{maslow})$
-    * 成就/榮譽加成 (Status/Honor)：$+ (20 \times Confidence_{reiss})$
-    * 囤積行為抑制 (Stability)：$+ (5 \times Confidence_{maslow})$
+* **情緒修正 (ΔScore_emotion)**：
+    * 正向增益：`+(30 * Intensity * Confidence_emo)`
+    * 負向抑制：`-(35 * Intensity * Confidence_emo)`
+* **動機修正 (ΔScore_motivation)**：
+    * 傳承/社交補償 (Legacy/Social)：`+(35 * Confidence_maslow)`
+    * 成就/榮譽加成 (Status/Honor)：`+(20 * Confidence_reiss)`
+    * 囤積行為抑制 (Stability)：`+(5 * Confidence_maslow)`
 * **悲傷補償**：若為紀念性質（Legacy）則 $+(25 \times Intensity)$；若純屬痛苦回憶則 $-(20 \times Intensity)$。
 
 ## 📁 資料夾結構
