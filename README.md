@@ -1,7 +1,7 @@
-# 🏠 AI 斷捨離心理決策系統
+# AI 斷捨離心理決策系統
 本專案開發一套結合 NLP 情感分析與深度心理學模型的輔助決策系統，透過分析使用者對物品的文字描述，從情緒、強度及心理動機三個維度提供斷捨離建議。
 
-## 🧠 技術架構與資料集
+## 技術架構與資料集
 
 系統採用多任務學習 (Multi-task Learning) 框架，整合多個專業領域的訓練資料：
 
@@ -9,7 +9,7 @@
 * **情感強度 (Intensity)**：使用 **SemEval-2018** 資料集，將情感連結量化為數值 (0.0 - 1.5)。
 * **心理動機 (Motivation)**：結合 **StoryCommons** 資料集，解析馬斯洛需求與瑞斯 (Reiss) 16 種基本動機。
 
-## ⚖️ 核心決策評估演算法
+## 核心決策評估演算法
 
 系統總分為 0 至 100 分，計算公式如下：
 
@@ -27,7 +27,7 @@ $$Score = Score_{base} + \Delta Score_{emotion} + \Delta Score_{motivation}$$
     * 囤積行為抑制 (Stability)：`+(5 * Confidence_maslow)`
 * **悲傷補償**：若為紀念性質（Legacy）則 $+(25 \times Intensity)$；若純屬痛苦回憶則 $-(20 \times Intensity)$。
 
-## 📁 資料夾結構
+## 資料夾結構
 
 * `app.py`: 系統進入點。
 * `core/`: 存放模型架構 (`model_arch.py`) 與推論引擎 (`inference_engine.py`)。
@@ -35,13 +35,13 @@ $$Score = Score_{base} + \Delta Score_{emotion} + \Delta Score_{motivation}$$
 * `models/`: 存放 `.pt` 權重檔（需手動放入）。
 * `data/`: 存放 CSV 訓練集與 JSONL 微調資料。
 
-## 🛠️ 快速啟動
+## 快速啟動
 
 1. `pip install -r requirements.txt`
 2. 將 `emotion_model.pt`、`intensity_model.pt`、`motivation_model.pt` 放入 `models/`
 3. `python3 app.py`
 
-## ⚙️ 技術規格
+## 技術規格
 
 * **Model**: BERT-base-multilingual-cased
 * **Environment**: WSL2 (Ubuntu 22.04), RTX 5060
